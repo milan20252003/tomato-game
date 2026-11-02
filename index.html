@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Tomato Quest – CIS046-3 Prototype</title>
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+<main>
+<h1>🍅 Tomato Quest</h1>
+<p class="msg">Find the digit hidden by the tomato before time runs out.</p>
+
+<!-- LOGIN / REGISTER (virtual identity) -->
+<section id="auth" class="card">
+  <h2>Sign in</h2>
+  <input id="user" placeholder="Username" autocomplete="username">
+  <input id="pass" type="password" placeholder="Password (min 6 chars)" autocomplete="current-password">
+  <div class="row"><button id="btnLogin">Log in</button><button id="btnReg" class="alt">Register</button></div>
+  <p id="authMsg" class="msg"></p>
+</section>
+
+<!-- GAME -->
+<section id="game" class="card hidden">
+  <div class="bar"><span id="who"></span><button id="btnLogout" class="ghost" style="flex:none">Log out</button></div>
+  <div class="bar"><span>Score: <b id="score">0</b></span><span>Lives: <b id="lives">3</b></span><span>⏱ <b id="time">20</b>s</span></div>
+  <img id="puzzle" alt="Tomato puzzle – find the missing digit">
+  <div class="digits" id="digits"></div>
+  <p id="gameMsg" class="msg">Press Start.</p>
+  <div class="row"><button id="btnStart">Start / Restart</button><button id="btnHint" class="ghost">Skip (-1 life)</button></div>
+</section>
+
+<!-- LEADERBOARD -->
+<section class="card">
+  <h2>Leaderboard</h2>
+  <table><thead><tr><th>#</th><th>Player</th><th>Best</th></tr></thead><tbody id="board"></tbody></table>
+</section>
+</main>
+
+<script src="script.js"></script>
+</body>
+</html>
